@@ -33,7 +33,7 @@ describe('Testa a camada Service para a rota "/products"', function () {
     });
 
     it('Retorna o produto caso o "id" exista', async function () {
-      sinon.stub(productsModel, "findById").resolves(product);
+      sinon.stub(productsModel, "findById").resolves([product]);
 
       const result = await productsService.findById(1);
 
