@@ -17,7 +17,7 @@ const findById = async (productId) => {
   return { type: null, message: product };
 };
 
-const insertProduct = async ({ name }) => {
+const insertProduct = async (name) => {
   const { insertId } = await productsModel.insertProduct({ name });
 
   const result = await productsModel.findById(insertId);
