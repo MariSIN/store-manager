@@ -1,0 +1,45 @@
+[
+  {
+    "_id": "85148be0-09e8-43b3-ad19-5d1128be2497",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://store_manager:3000/sales",
+    "url": "http://store_manager:3000/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-16T18:45:12.074Z",
+    "modified": "2023-02-16T18:45:12.074Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "12ddbba9-f5ff-4862-bc48-31fc6ca1f525",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://store_manager:3000/products",
+    "url": "http://localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-16T18:45:26.457Z",
+    "modified": "2023-02-17T16:50:05.785Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 10,\n    \"quantity\": 2\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "form": []
+    },
+    "tests": [],
+    "preReq": {
+      "runRequests": [
+        {
+          "reqId": "85148be0-09e8-43b3-ad19-5d1128be2497",
+          "colId": "history",
+          "triggerCondition": "run-always",
+          "triggerValue": ""
+        }
+      ]
+    }
+  }
+]
