@@ -5,6 +5,7 @@ const {
   insertSales,
   getAllSales,
   findById,
+  deleteSaleById,
 } = require('../controllers/sales.controllers');
 
 const {
@@ -22,4 +23,6 @@ salesRouter.post('/',
   validateId,
   validateProductId,
   insertSales);
+salesRouter.delete('/:id', deleteSaleById);
+
 module.exports = salesRouter;
