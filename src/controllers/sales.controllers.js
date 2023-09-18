@@ -28,6 +28,16 @@ const insertSales = async (req, res) => {
   return res.status(201).json(message);
 };
 
+const updateSaleById = async (req, res) => {
+  const product = req.body;
+  const { id } = req.params;
+  const { type, message } = await salesService.updateProductById(product, id);
+
+  if (message) return res.status(type).json({ message });
+
+  return res.status(200).json(message);
+};
+
 const deleteSaleById = async (req, res) => {
   const { id } = req.params;
   const { type, message } = await salesService.deleteSaleById(id);
@@ -40,5 +50,6 @@ module.exports = {
   getAllSales,
   findById,
   insertSales,
+  updateSaleById,
   deleteSaleById,
 };

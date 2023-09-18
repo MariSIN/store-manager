@@ -54,9 +54,23 @@ const validateProductId = async (req, res, next) => {
   next();
 };
 
+const validateSaleExists = (req, res, next) => {
+  const saleId = req.body;
+
+  const findSale = saleId.find((s) => s.saleId);
+
+  if (!findSale) {
+    return res.status(404).json({
+      message: 'Sale not found',
+    });
+  }
+  next();
+};
+
 module.exports = {
   validateQuantityExists,
   validateQtt,
   validateId,
   validateProductId,
+  validateSaleExists,
 };
